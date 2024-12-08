@@ -27,6 +27,6 @@ Follow these steps to set up the project locally:
 
 1. Clone the repository:
     ```bash
-    git clone <repository_url>
-    cd <repository_name>
+    git clone https://github.com/KevinThulnith/Laravel-crud-app.git
+    cd Laravel-crud-app
     ```
