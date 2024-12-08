@@ -1,6 +1,6 @@
 # Laravel CRUD Application
 
-This is a simple CRUD (Create, Read, Update, Delete) application built using Laravel Breeze for authentication. The app allows users to manage products by adding, viewing, editing, and deleting them.
+This is a simple CRUD (Create, Read, Update, Delete) application built using Laravel Breeze for authentication. The app allows users to manage products by adding, viewing, editing, and deleting them.To do the peoject from scratch <a href="INSTALL.md"> docs</a>.
 
 ## Features
 
