@@ -29,7 +29,8 @@ cd <project-name>
 _&&_ Separates commaands
 
 ```bash
-npm install && npm run build
+npm install
+npm run build
 ```
 
 4. Go to project directory :
@@ -242,7 +243,7 @@ _SELECT \* FROM <table-name>_ in laravel
     $product->update($data);
 ```
 
-## Set up Login\ Register
+## Set up Login | Register | Email verificaton
 
 All commands executed on project directory command prompt.
 
@@ -264,4 +265,29 @@ Select blade as front end, press enter twice
 
 ```bash
  npm install
+```
+
+4. Email Varification :
+
+Uncomment this line in user model and add function to user model.
+
+```bash
+ use Illuminate\Contracts\Auth\MustVerifyEmail;
+```
+
+```bash
+ class User extends Authenticatable implements MustVerifyEmail
+```
+
+Configure .env file with email and App password with gmail.
+
+```bash
+ MAIL_MAILER=smtp
+ MAIL_HOST=smtp.gmail.com
+ MAIL_PORT=465
+ MAIL_USERNAME= <example@gmail.com>
+ MAIL_PASSWORD= <email app password>
+ MAIL_ENCRYPTION=tls
+ MAIL_FROM_ADDRESS= <same email>
+ MAIL_FROM_NAME="Laravel App"
 ```
