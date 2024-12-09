@@ -1,4 +1,4 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="600" alt="Laravel Logo"></a></p>
 
 # Laravel project
 
@@ -6,13 +6,13 @@
 
 1. Creating an Application :
 
-method one
+-   method one
 
 ```bash
 laravel new <project-name>
 ```
 
-method two
+-   method two
 
 ```bash
 composer create-project laravel/laravel <project-name>
@@ -24,31 +24,28 @@ composer create-project laravel/laravel <project-name>
 cd <project-name>
 ```
 
-3. Install npm packages :
-
-_&&_ Separates commaands
-
-```bash
-npm install
-npm run build
-```
-
-4. Go to project directory :
-
-```bash
-cd <project-name>
-```
-
-5. Test project :
-
-```bash
-composer run dev
-```
-
-6. Run server :
+3. Run project server :
 
 ```bash
 php artisan serve
+```
+
+3. Install npm packages :
+
+```bash
+npm install
+```
+
+4. Start front engine :
+
+```bash
+npm run build
+```
+
+5. Run both frontend and backend services :
+
+```bash
+composer run dev
 ```
 
 ## Project database and models
@@ -97,7 +94,7 @@ php artisan make:migration create_products_table
 
 5. Genarate model class for the table:
 
-_model name must be plural_
+-   model name must be _plural_
 
 ```bash
 php artisan make:model products
@@ -126,7 +123,7 @@ Controller class is created in app/Http/Controllers
 php artisan make:controller productsController
 ```
 
-2. Create a view _resources/views_ basic html/php:
+2. Create a view _resources/views_ with built it blade | Tailwind Css :
 
 3. Link view to controller:
 
@@ -140,7 +137,7 @@ class productController extends Controller
 }
 ```
 
-4. Create route on routes/web.php and link controller class:
+4. Create route on routes/web.php and link controller class :
 
 ```bash
 use App\Http\Controllers\productController;
@@ -150,7 +147,7 @@ Route::get('/product', [productController::class, 'index'])->name('product.index
 
 5. Create form view :
 
-_add the folowing to view errors and form security_ describe form method inside brackets
+-   _add the folowing to view errors and form security_ describe form method inside brackets
 
 ```bash
     @csrf
@@ -175,9 +172,9 @@ _add the folowing to view errors and form security_ describe form method inside 
     public function store(Request $req)
     {
         $data = $req->validate([
-            'name' => 'required',
-            'quantity' => 'required|decimal:0,2',
-            'price' => 'required|numeric',
+            'name' => 'required|string|max:255',
+            'price' => 'required|decimal:0,2',
+            'quantity' => 'required|numeric',
             'description' => 'required',
         ]);
 
@@ -201,7 +198,7 @@ Route::post('/product', [productController::class, 'store'])->name('product.stor
 
 ## Select, insert, delete, update data
 
-edit project files to view, controll db data.
+### Edit project files to view, controll db data.
 
 1. Insert data :
 
@@ -209,9 +206,9 @@ Validate data before inserting
 
 ```bash
     $data = $req->validate([
-        'name' => 'required',
-        'quantity' => 'required|decimal:0,2',
-        'price' => 'required|numeric',
+        'name' => 'required|string|max:255',
+        'price' => 'required|decimal:0,2',
+        'quantity' => 'required|numeric',
         'description' => 'required',
     ]);
     $newProduct = product::create($data);
@@ -235,9 +232,9 @@ _SELECT \* FROM <table-name>_ in laravel
 
 ```bash
     $data = $req->validate([
-        'name' => 'required',
-        'quantity' => 'required|decimal:0,2',
-        'price' => 'required|numeric',
+        'name' => 'required|string|max:255',
+        'price' => 'required|decimal:0,2',
+        'quantity' => 'required|numeric',
         'description' => 'required',
     ]);
     $product->update($data);

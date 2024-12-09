@@ -1,6 +1,6 @@
 # Laravel CRUD Application
 
-This is a simple CRUD (Create, Read, Update, Delete) application built using Laravel Breeze for authentication. The app allows users to manage products by adding, viewing, editing, and deleting them. It also includes email verification for user accounts. To do the peoject from scratch <a href="INSTALL.md"> docs</a>.
+This is a simple CRUD (Create, Read, Update, Delete) application built using Laravel Breeze for authentication. The app allows users to manage products by adding, viewing, editing, and deleting them. It also includes email verification for user accounts. To do the peoject from scratch <a href="INSTALL.md"> docs</a> for more info.
 
 ## Features
 
@@ -24,7 +24,7 @@ Before running this application, make sure you have the following installed:
 -   PHP >= 8.0
 -   Composer
 -   Laravel CLI
--   MySQL or another supported database
+-   MySQL or another supported database | SQLite
 -   Node.js and npm (for frontend dependencies)
 
 ## Usage
