@@ -100,6 +100,12 @@ php artisan make:migration create_products_table
 php artisan make:model products
 ```
 
+```bash
+php artisan make:model products -m
+```
+
+-   To make model and migrtation both
+
 6. Edit created model :
 
 In app/Models there is coresponding file to edit,
